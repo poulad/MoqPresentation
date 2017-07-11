@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NextBus.NET", "src\NextBus.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E45AD8C7-F95D-4F43-9967-91EE66B4D568}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "src\Demo\Demo.csproj", "{731C47F4-E03F-440D-AE6D-CDABB2844E4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo", "src\Demo\Demo.csproj", "{731C47F4-E03F-440D-AE6D-CDABB2844E4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{6BF98C95-176C-417D-8082-78E100EA70E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextBus.NET.Tests", "test\NextBus.NET.Tests\NextBus.NET.Tests.csproj", "{57308644-5A38-46FA-87FC-46ABC577968E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +27,10 @@ Global
 		{731C47F4-E03F-440D-AE6D-CDABB2844E4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{731C47F4-E03F-440D-AE6D-CDABB2844E4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{731C47F4-E03F-440D-AE6D-CDABB2844E4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57308644-5A38-46FA-87FC-46ABC577968E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57308644-5A38-46FA-87FC-46ABC577968E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57308644-5A38-46FA-87FC-46ABC577968E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57308644-5A38-46FA-87FC-46ABC577968E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,5 +38,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{1E6CC926-6DED-43A2-95D5-13EB8552A0E3} = {E45AD8C7-F95D-4F43-9967-91EE66B4D568}
 		{731C47F4-E03F-440D-AE6D-CDABB2844E4E} = {E45AD8C7-F95D-4F43-9967-91EE66B4D568}
+		{57308644-5A38-46FA-87FC-46ABC577968E} = {6BF98C95-176C-417D-8082-78E100EA70E6}
 	EndGlobalSection
 EndGlobal
