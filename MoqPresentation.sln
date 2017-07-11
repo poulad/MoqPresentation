@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoqPresentation", "MoqPresentation\MoqPresentation.csproj", "{1E6CC926-6DED-43A2-95D5-13EB8552A0E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NextBus.NET", "src\NextBus.NET\NextBus.NET.csproj", "{1E6CC926-6DED-43A2-95D5-13EB8552A0E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E45AD8C7-F95D-4F43-9967-91EE66B4D568}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "src\Demo\Demo.csproj", "{731C47F4-E03F-440D-AE6D-CDABB2844E4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +19,16 @@ Global
 		{1E6CC926-6DED-43A2-95D5-13EB8552A0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E6CC926-6DED-43A2-95D5-13EB8552A0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E6CC926-6DED-43A2-95D5-13EB8552A0E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{731C47F4-E03F-440D-AE6D-CDABB2844E4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{731C47F4-E03F-440D-AE6D-CDABB2844E4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{731C47F4-E03F-440D-AE6D-CDABB2844E4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{731C47F4-E03F-440D-AE6D-CDABB2844E4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1E6CC926-6DED-43A2-95D5-13EB8552A0E3} = {E45AD8C7-F95D-4F43-9967-91EE66B4D568}
+		{731C47F4-E03F-440D-AE6D-CDABB2844E4E} = {E45AD8C7-F95D-4F43-9967-91EE66B4D568}
 	EndGlobalSection
 EndGlobal
