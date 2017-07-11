@@ -24,7 +24,7 @@ namespace NextBus.NET
         {
             string xml = await _httpClient.GetAsync("command=agencyList");
 
-            var document = XDocument.Parse(xml);
+            XDocument document = XDocument.Parse(xml);
 
             var query = from x in document.Root?.Elements("agency")
                         select new Agency
