@@ -14,9 +14,9 @@ namespace Demo
 
         static async Task Demo()
         {
-            var client = new NextBusClient();
+            INextBusClient client = new NextBusClient();
 
-            Agency[] agencies = await client.GetAgencies();
+            Agency[] agencies = await client.GetAgenciesAsync();
 
             foreach (var agency in agencies)
             {

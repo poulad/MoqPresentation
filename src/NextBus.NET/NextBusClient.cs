@@ -1,22 +1,28 @@
-﻿using System;
-using System.Linq;
-using System.Net.Http;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using NextBus.NET.Types;
 
 namespace NextBus.NET
 {
-    public class NextBusClient
+    public class NextBusClient : INextBusClient
     {
-        private readonly HttpClient _httpClient = new HttpClient { BaseAddress = new Uri(BaseUrl) };
+        private readonly INextBusHttpClient _httpClient;
 
-        private const string BaseUrl = "http://webservices.nextbus.com/service/publicXMLFeed";
-
-        public async Task<Agency[]> GetAgencies()
+        public NextBusClient()
+            : this(new NextBusHttpClient())
         {
-            var response = await _httpClient.GetAsync("?command=agencyList");
-            string xml = await response.Content.ReadAsStringAsync();
+
+        }
+
+        public NextBusClient(INextBusHttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
+
+        public async Task<Agency[]> GetAgenciesAsync()
+        {
+            string xml = await _httpClient.GetAsync("command=agencyList");
 
             var document = XDocument.Parse(xml);
 
