@@ -3,11 +3,19 @@ using System.Threading.Tasks;
 using Moq;
 using NextBus.NET.Types;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace NextBus.NET.Tests
 {
     public class AgencyTests
     {
+        private readonly ITestOutputHelper _output;
+
+        public AgencyTests(ITestOutputHelper output)
+        {
+            _output = output;
+        }
+
         [Fact(DisplayName = "Should get multiple available agencies")]
         public async Task ShouldGetMultipleAgencies()
         {
@@ -26,6 +34,7 @@ namespace NextBus.NET.Tests
             INextBusClient sut = new NextBusClient(mockHttpClient.Object);
             Agency[] agencies = await sut.GetAgenciesAsync();
 
+            mockHttpClient.Verify(client => client.GetAsync("command=agencyList"), Times.Once);
             Assert.Equal(3, agencies.Length);
             Assert.All(agencies, a => Assert.NotNull(a.Title));
         }
@@ -40,11 +49,13 @@ namespace NextBus.NET.Tests
 
             var mockHttpClient = new Mock<INextBusHttpClient>();
             mockHttpClient.Setup(client => client.GetAsync(It.IsAny<string>()))
-                .ReturnsAsync(xmlData);
+                .ReturnsAsync(xmlData)
+                .Callback(() => _output.WriteLine("Returning..."));
 
             INextBusClient sut = new NextBusClient(mockHttpClient.Object);
             Agency[] agencies = await sut.GetAgenciesAsync();
 
+            mockHttpClient.Verify(client => client.GetAsync("command=agencyList"), Times.Once);
             Assert.Empty(agencies);
         }
 
@@ -57,6 +68,7 @@ namespace NextBus.NET.Tests
 
             INextBusClient sut = new NextBusClient(mockHttpClient.Object);
 
+            mockHttpClient.Verify(client => client.GetAsync(It.IsAny<string>()), Times.Never);
             await Assert.ThrowsAsync<ArgumentNullException>(() => sut.GetAgenciesAsync());
         }
     }
